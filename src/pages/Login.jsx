@@ -1,5 +1,5 @@
 import React from 'react';
-import Add from "../images/addAvatar.png";
+
 
 function Login(props) {
     return (
