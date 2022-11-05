@@ -3,6 +3,7 @@ import Cam from '../images/cam.png'
 import Add from '../images/add.png'
 import More from '../images/more.png'
 import Messages from "./Messages";
+import Input from "./Input";
 
 function Chat(props) {
     return (
@@ -16,6 +17,7 @@ function Chat(props) {
                 </div>
             </div>
             <Messages/>
+            <Input/>
         </div>
     );
 }
