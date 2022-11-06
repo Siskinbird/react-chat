@@ -1,17 +1,20 @@
-
+import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth"
+import { getAuth } from "firebase/auth"
 
 
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_ID
+    apiKey: "AIzaSyAJNUeU3gjwnEsVPjjIYMrLRnqS27mgzso",
+    authDomain: "chat4siskin.firebaseapp.com",
+    projectId: "chat4siskin",
+    storageBucket: "chat4siskin.appspot.com",
+    messagingSenderId: "44237076632",
+    appId: "1:44237076632:web:0640acb03d83c9278878ed"
 };
 
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth()
+export const storage = getStorage();
+export const db = getFirestore()
