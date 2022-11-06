@@ -4,10 +4,12 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import {auth, db, storage} from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
+import {useNavigate} from 'react-router-dom'
 
 
 function Register() {
     const [err, setErr] = useState(false)
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -39,6 +41,8 @@ function Register() {
                                 displayEmail,
                                 photoURL: downloadURL
                             });
+                            await setDoc(doc(db, "userChats", (await res).user.uid), {})
+                            navigate('/')
                         }
                     );
                 })
@@ -46,25 +50,7 @@ function Register() {
         } catch (err) {
             setErr(true)
         }
-
-
-
-            // .then((userCredential) => {
-            //     // Signed in
-            //     const user = userCredential.user;
-            //     console.log(user)
-            // })
-            // .catch((error) => {
-            //     const errorCode = error.code;
-            //     const errorMessage = error.message;
-            //     // ..
-            // });
-
     }
-
-
-
-
 
     return (
         <div className='formContainer'>
