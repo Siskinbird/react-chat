@@ -59,7 +59,7 @@ function Search() {
                 });
             }
         }catch (err) {
-            setErr(true)
+            // setErr(true)
         }
         setUser(null)
         setUserName('')

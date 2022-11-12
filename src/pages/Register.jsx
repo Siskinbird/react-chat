@@ -17,7 +17,6 @@ function Register() {
         const displayEmail = e.target[1].value
         const displayPassword = e.target[2].value
         const displayFile = e.target[3].files[0]
-        // console.log(e.target[0].value)
 
         try {
             const res = createUserWithEmailAndPassword(auth, displayEmail, displayPassword);
@@ -63,7 +62,7 @@ function Register() {
                     <input type="password" placeholder='password' autoComplete="on"/>
                     <input style={{display: 'none'}} type="file" id='file'/>
                     <label htmlFor='file'>
-                        <img src={Add} alt='add image'/>
+                        <img src={Add} alt='add'/>
                         <span>Add an avatar</span>
                     </label>
                     <button>Sign up</button>
